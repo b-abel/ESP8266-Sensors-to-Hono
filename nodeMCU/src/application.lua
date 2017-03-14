@@ -3,7 +3,6 @@ dht = require("dht")
 
 -- Constants
 SENSOR_PIN = 2
-UPDATE_RATE_MS = 10000
 TOPIC_TELEMETRY = "telemetry/"..HONO_TENANT.."/"..HONO_DEVICE_ID
 TOPIC_EVENT = "event/"..HONO_TENANT.."/"..HONO_DEVICE_ID
 
@@ -25,11 +24,11 @@ function publish(data, isEvent)
     end
 end
 
-function connect()
+function connect_mqtt()
     if wifi.sta.status() == 5 then
-        m:connect(HONO_MQTT_ADAPTER_HOST, HONO_MQTT_ADAPTER_PORT, 0, 1,
+        m:connect(HONO_HOST, HONO_MQTT_ADAPTER_PORT, 0, 1,
             function(conn)
-                print("Connected to ".. HONO_MQTT_ADAPTER_HOST ..":".. HONO_MQTT_ADAPTER_PORT .." with device-ID '".. HONO_DEVICE_ID .."'")
+                print("Connected to ".. HONO_HOST ..":".. HONO_MQTT_ADAPTER_PORT .." with device-ID '".. HONO_DEVICE_ID .."'")
                 publish(string.format("{'startup':'%s'}", wifi.sta.getip()), true)
                 sensors_loop()
             end,
@@ -71,4 +70,4 @@ function sensors_loop()
     tmr.alarm(0, UPDATE_RATE_MS, 1, function() sensors_loop() end)
 end
 
-connect()
+connect_mqtt()

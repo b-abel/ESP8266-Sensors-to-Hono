@@ -7,7 +7,7 @@ function startup()
     else
         print("Starting application")
         file.close("init.lua")
-        dofile("application.lua")
+        dofile("register_device.lua")
     end
 end
 
