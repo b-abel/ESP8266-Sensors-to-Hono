@@ -34,4 +34,4 @@ Configure in file [config.lua](nodeMCU/src/config.lua).
 ## Usage
 
 Flash, configure and start the device. 
-It will register itself at Hono as "esp8266.<MAC-address>". 
+It will register itself at Hono as "esp8266.*MAC-address*". 
