@@ -22,6 +22,8 @@ to [Eclipse Hono](https://www.eclipse.org/hono/).
 (created by [https://nodemcu-build.com/](https://nodemcu-build.com/), 
 build provides integer _and_ float version, **use float**) 
 with modules: cjson,dht,file,gpio,http,mqtt,net,node,tmr,uart,wifi.
+
+See the [NodeMCU documentation](https://nodemcu.readthedocs.io/en/master/) for information about the modules as well as building and flashing the firmware.
  
 ### IDE
 
