@@ -27,7 +27,7 @@ See the [NodeMCU documentation](https://nodemcu.readthedocs.io/en/master/) for i
  
 ### IDE
 
-* e.g.: [ESPlorer](https://esp8266.ru/esplorer/) - includes a serial terminal 
+* e.g.: [ESPlorer](https://esp8266.ru/esplorer/) - includes a serial terminal. Might require drivers for the board (MacOS, Win, Linux should work). Set Baud rate to 115200.
 
 ## Configure
 
